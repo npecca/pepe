@@ -5,7 +5,7 @@ async def main():
     chat_url = 'https://web.telegram.org/a/#7631205793'
     
     async with async_playwright() as p:
-        browser = await p.chromium.launch_persistent_context(headless=False, user_data_dir='./userdata')
+        browser = await p.chromium.launch_persistent_context(headless=True, user_data_dir='./userdata')
         page = await browser.new_page()
         await page.goto(chat_url)
         

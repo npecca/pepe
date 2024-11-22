@@ -3,21 +3,19 @@ name: Playwright Automation
 on:
   push
   # schedule:
-  #   - cron: '47 * * * *'  # Runs every hour
+  #   - cron: "30 11 * * *"    #runs at 11:30 UTC everyday
 
 jobs:
-  run:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
-      - name: Set up Python
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.11'
-
+          python-version: 3.11 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip

@@ -1,8 +1,9 @@
 name: Playwright Automation
 
 on:
-  schedule:
-    - cron: '47 * * * *'  # Runs every hour
+  push
+  # schedule:
+  #   - cron: '47 * * * *'  # Runs every hour
 
 jobs:
   run:
